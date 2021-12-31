@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="{{icon}}" type="image/x-icon" />
     <title>Weather</title>
 </head>
 <body>
     {{>header}}
     <h1>{{title}}</h1>
-    <p>Location searched for is {{location}}</p>
-    <p>The temperature is {{temperature}} celsius</p>
+    <form action="/weather" method="post">
+        <input type="text" name="location" placeholder="Please enter the location"><br><br>
+        <button>Search</button>
+    </form>
+    <p>Location searched for is <span style="font-weight: 600;">{{location}}</span></p>
+   
+    <p>The temperature is <span style="font-weight: 600;">{{temperature}} </span>celsius</p> <img src="{{icon}}"/>
     {{>footer}}
 </body>
 </html>
