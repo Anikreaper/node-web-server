@@ -12,11 +12,10 @@
     {{>header}}
     <h1>{{title}}</h1>
     <form action="/weather" method="post">
-        <input type="text" name="location" placeholder="Please enter the location"><br><br>
+        <input type="text" required name="location" placeholder="Please enter the location"><br><br>
         <button>Search</button>
     </form>
     <p>Location searched for is <span style="font-weight: 600;">{{location}}</span></p>
-   
     <p>The temperature is <span style="font-weight: 600;">{{temperature}} </span>celsius</p> <img src="{{icon}}"/>
 
     {{>footer}}
