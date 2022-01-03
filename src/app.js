@@ -33,10 +33,7 @@ app.get('/weather', (req, res) => {
 
     res.render('weather', {
         title: "Weather App",
-
         header: "This is Project in NodeJS",
-
-
     })
 
 })
@@ -69,7 +66,9 @@ app.post('/weather', (req, res) => {
                 }
             })
         } else {
-            console.log('Error', error)
+            return res.render('weather',{
+                error:error
+            })
         }
     })
 
