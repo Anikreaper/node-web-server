@@ -5,6 +5,7 @@ const forecast = require("../utils/forecast")
 var bodyParser = require("body-parser");
 
 const app = express()
+var port = process.env.PORT || 3000
 const hbs = require("hbs")
 app.use(bodyParser.urlencoded({
     extended: true
@@ -33,10 +34,7 @@ app.get('/weather', (req, res) => {
 
     res.render('weather', {
         title: "Weather App",
-
         header: "This is Project in NodeJS",
-
-
     })
 
 })
@@ -61,7 +59,6 @@ app.post('/weather', (req, res) => {
                         header: "This is Project in NodeJS",
                         temperature: data.current.temperature,
                         icon: data.current.weather_icons
-
                     })
 
 
@@ -69,7 +66,9 @@ app.post('/weather', (req, res) => {
                 }
             })
         } else {
-            console.log('Error', error)
+            return res.render('weather',{
+                error:error
+            })
         }
     })
 
@@ -88,6 +87,6 @@ app.get("*", (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000")
-})
+app.listen(port, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
