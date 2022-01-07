@@ -5,7 +5,7 @@ const forecast = require("../utils/forecast")
 var bodyParser = require("body-parser");
 
 const app = express()
-const port = process.env.PORT || 3000
+var port = process.env.PORT || 3000
 const hbs = require("hbs")
 app.use(bodyParser.urlencoded({
     extended: true
