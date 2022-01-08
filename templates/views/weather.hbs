@@ -10,14 +10,20 @@
 </head>
 <body>
     {{>header}}
+    <div class="weather">
     <h1>{{title}}</h1>
     <form action="/weather" method="post">
         <input type="text" required name="location" placeholder="Please enter the location"><br><br>
         <button>Search</button>
     </form>
+    </div>
+    {{#if location}}
     <p>Location searched for is <span style="font-weight: 600;">{{location}}</span></p>
-    <p>The temperature is <span style="font-weight: 600;">{{temperature}} </span>celsius</p> <img src="{{icon}}"/>
+    <p>The temperature is <span style="font-weight: 600;">{{temperature}} </span>celsius</p> <img src="{{icon}}"/> 
+    {{/if}}
+    {{#if error}}
     <p style="color: red;">Error message:-{{error}}</p>
+    {{/if}}
     {{>footer}}
 </body>
 </html>

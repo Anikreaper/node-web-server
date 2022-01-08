@@ -26,7 +26,7 @@ app.get('', (req, res) => {
     res.render('index', {
         title: "Weather App",
         name: "Anik Mondal",
-        header: "This header"
+        header: "Very first Node JS Application"
     })
 })
 

@@ -1,12 +1,33 @@
 h1 {
-    color: rgba(10, 10, 10, 0.644);
+    color:#3e2121;
+    text-decoration: underline;
 }
 
 body{
     text-align: center;
-    color: rgb(82, 61, 53);
+    color: #3e2121;
+    background: #FFEFBA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 
 }
 a{
     padding: 10px;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.weather{
+    margin-top: 50px;
+}
+
+p{
+    font-weight: 600;
+    font-size: 20px;
 }
